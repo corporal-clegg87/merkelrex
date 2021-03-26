@@ -5,28 +5,28 @@
 #include "OrderBook.hpp"
 #include "Wallet.hpp"
 
-
 class MerkelMain
 {
-    public:
-        MerkelMain();
-        /** Call this to start the sim */
-        void init();
-    private: 
-        void printMenu();
-        void printHelp();
-        void printMarketStats();
-        void enterAsk();
-        void enterBid();
-        void printWallet();
-        void gotoNextTimeframe();
-        int getUserOption();
-        void processUserOption(int userOption);
+public:
+    /** MerkelMain constructor  */
+    MerkelMain();
+    //The wallet exists on the exchange as in real life.
+    Wallet wallet;
+    OrderBook orderBook{"20200601.csv"};
+    std::string currentTime;
 
-        std::string currentTime;
+    /** Starts the simulation and adds cryptocurrency to the users wallet*/
+    void init();
 
-        OrderBook orderBook{"20200317.csv"};
+    /** Takes product, amount and price, creates an ask OBE from them and inserts them into the orderbook */
+    void enterAsk(std::string product, double amount, double price);
 
-        Wallet wallet;
+    /** Takes product, amount and price, creates a bid OBE from them and inserts them into the orderbook */
+    void enterBid(std::string product, double amount, double price);
 
+    /** Increments currentTime if newTrade is true */
+    void gotoNextTimeframe(bool newTrade);
+
+private:
+    void printWallet();
 };

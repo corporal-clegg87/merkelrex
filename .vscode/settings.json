@@ -45,7 +45,12 @@
         "functional": "cpp",
         "iterator": "cpp",
         "numeric": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "ctime": "cpp",
+        "iomanip": "cpp",
+        "chrono": "cpp",
+        "ratio": "cpp",
+        "list": "cpp"
     },
     "terminal.integrated.shell.windows": "cmd.exe",
     "C_Cpp.errorSquiggles": "Disabled"

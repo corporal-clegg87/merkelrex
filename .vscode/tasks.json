@@ -8,7 +8,7 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "command": ".\\build.bat"
+            "command": "g++ -g --std=c++11 src/OrderBookEntry.cpp src/MerkelMain.cpp src/main.cpp src/CSVReader.cpp src/OrderBook.cpp src/Wallet.cpp src/TradingBot.cpp src/Bot.cpp"
         },
         {
             "label": "Build & run C++ project",
@@ -17,7 +17,7 @@
                 "kind": "test",
                 "isDefault": true
             },
-            "command": ".\\build.bat && .\\bin\\main.exe"
+            "command": "g++ -g --std=c++11  src/OrderBookEntry.cpp src/MerkelMain.cpp src/main.cpp src/CSVReader.cpp src/OrderBook.cpp src/Wallet.cpp src/TradingBot.cpp src/Bot.cpp  && .\\a.exe"
         }
     ]
 }
